@@ -1,52 +1,51 @@
+## Ask BiqQuery
 
-    ## Ask BiqQuery
+This demo is to showcase answering questions on a tabular data available in Big Query using Vertex PALM LLM & Langchain.
 
-    This demo is to showcase answering questions on a tabular data available in Big Query using Vertex PALM LLM & Langchain.
+This demo uses a sample public dataset from Kaggle (https://www.kaggle.com/datasets/hugomathien/soccer)
 
-    This demo uses a sample public dataset from Kaggle (https://www.kaggle.com/datasets/hugomathien/soccer)
+### Sample Inputs:
+1. What is short name for FC Barcelona ?
+2. What BAR is ?
+3. How many matches FC Barcelona won in the 2008/2009 season as home team ?
+4. Here is the rule for each match, win = 3 points, draw = 1 point, lost = 0 point. how many points FC Barcelona had for season 2008/2009
 
-    ### Sample Inputs:
-    1. what is short name for FC Barcelona ?
-    2. what BAR is ?
-    3. how many matchs FC Barcelona won in the 2008/2009 season as home team ?
-    4. here is the rule for each match, win = 3 points, draw = 1 point, lost = 0 point. how many points FC Barcelona had for season 2008/2009
-
-    ### Enter a search query...
-
-
-    ### Prepare the dataset
-    1. Donwload the dataset from kaggle.com
-    2. Setup sqlite env on your linux os
-    3. Export the each table as CSV
-    4. Upload the CSV to gcs and import to bigquery
-
-    ## Create partiation and cluster index for table "match" if necessary
-    
-    CREATE TABLE hello-world-360207.demo_talk2bq.match_clustered 
-    CLUSTER BY
-      season, home_team_api_id
-    AS (
-      SELECT * FROM hello-world-360207.demo_talk2bq.match
-    );
-
-    CREATE TABLE hello-world-360207.demo_talk2bq.match
-    AS (
-      SELECT * FROM hello-world-360207.demo_talk2bq.match_clustered
-    );
+### Enter a search query...
 
 
+### Prepare the dataset
+1. Donwload the dataset from kaggle.com
+2. Setup sqlite env on your linux os
+3. Export the each table as CSV
+4. Upload the CSV to gcs and import to bigquery
 
-    ### Docker build
-    docker build --tag talk2bq .
+## Create partiation and cluster index for table "match" if necessary
 
-    docker images 
+CREATE TABLE hello-world-360207.demo_talk2bq.match_clustered 
+CLUSTER BY
+  season, home_team_api_id
+AS (
+  SELECT * FROM hello-world-360207.demo_talk2bq.match
+);
 
-    docker ps
+CREATE TABLE hello-world-360207.demo_talk2bq.match
+AS (
+  SELECT * FROM hello-world-360207.demo_talk2bq.match_clustered
+);
 
-    docker run -d -p 8080:8080 talk2bq
 
-    docker kill [Container ID]
 
-    docker tag talk2bq gcr.io/<Project ID>/talk2bq-alexgcp:v1.0
+### Docker build
+docker build --tag talk2bq .
 
-    docker push gcr.io/<Project ID>/talk2bq-alexgcp:v1.0
+docker images 
+
+docker ps
+
+docker run -d -p 8080:8080 talk2bq
+
+docker kill [Container ID]
+
+docker tag talk2bq gcr.io/<Project ID>/talk2bq-alexgcp:v1.0
+
+docker push gcr.io/<Project ID>/talk2bq-alexgcp:v1.0
