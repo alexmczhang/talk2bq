@@ -20,6 +20,21 @@
     3. Export the each table as CSV
     4. Upload the CSV to gcs and import to bigquery
 
+    ## Create partiation and cluster index for table "match" if necessary
+    
+    CREATE TABLE hello-world-360207.demo_talk2bq.match_clustered 
+    CLUSTER BY
+      season, home_team_api_id
+    AS (
+      SELECT * FROM hello-world-360207.demo_talk2bq.match
+    );
+
+    CREATE TABLE hello-world-360207.demo_talk2bq.match
+    AS (
+      SELECT * FROM hello-world-360207.demo_talk2bq.match_clustered
+    );
+
+
 
     ### Docker build
     docker build --tag talk2bq .
