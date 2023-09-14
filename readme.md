@@ -1,3 +1,9 @@
+### Update on 2023-09-14
+- add the chart plot feature
+- Run 2nd sample input 'In the 2008/2009 season, who are the top 10 teams in terms of goals scored?'
+- Click "Show Bar Plot" button
+
+
 ## Ask BiqQuery
 
 This demo is to showcase answering questions on a tabular data available in Big Query using Vertex PALM LLM & Langchain.
@@ -6,9 +12,10 @@ This demo uses a sample public dataset from Kaggle (https://www.kaggle.com/datas
 
 ### Sample Inputs:
 1. What is short name for FC Barcelona ?
-2. What BAR is ?
-3. How many matches FC Barcelona won in the 2008/2009 season as home team ?
-4. Here is the rule for each match, win = 3 points, draw = 1 point, lost = 0 point. how many points FC Barcelona had for season 2008/2009
+2. In the 2008/2009 season, who are the top 10 teams in terms of goals scored?
+3. In the 2008/2009 season, who are the top 10 teams in terms of goals scored, and how many goals they scored at home and away?
+4. How many matches FC Barcelona won in the 2008/2009 season as home team ?
+5. Here is the rule for each match, win = 3 points, draw = 1 point, lost = 0 point. how many points FC Barcelona had for season 2008/2009
 
 ### Enter a search query...
 
