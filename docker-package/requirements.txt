@@ -6,3 +6,5 @@ gradio
 pydantic>=1.10.7
 SQLAlchemy
 sqlalchemy-bigquery
+plotly
+pandas-gbq
