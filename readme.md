@@ -32,12 +32,12 @@ CREATE TABLE hello-world-360207.demo_talk2bq.match_clustered
 CLUSTER BY
   season, home_team_api_id
 AS (
-  SELECT * FROM hello-world-360207.demo_talk2bq.match
+  SELECT * FROM <project-id>.<dataset-id>.match
 );
 
 CREATE TABLE hello-world-360207.demo_talk2bq.match
 AS (
-  SELECT * FROM hello-world-360207.demo_talk2bq.match_clustered
+  SELECT * FROM <project-id>.<dataset-id>.match_clustered
 );
 
 
@@ -53,6 +53,6 @@ docker run -d -p 8080:8080 talk2bq
 
 docker kill [Container ID]
 
-docker tag talk2bq gcr.io/<Project ID>/talk2bq-alexgcp:v1.0
+docker tag talk2bq gcr.io/<Project-ID>/talk2bq-alexgcp:v1.0
 
-docker push gcr.io/<Project ID>/talk2bq-alexgcp:v1.0
+docker push gcr.io/<Project-ID>/talk2bq-alexgcp:v1.0
