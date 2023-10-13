@@ -16,6 +16,11 @@ This demo uses a sample public dataset from Kaggle (https://www.kaggle.com/datas
 3. In the 2008/2009 season, who are the top 10 teams in terms of goals scored, and how many goals they scored at home and away?
 4. How many matches FC Barcelona won in the 2008/2009 season as home team ?
 5. Here is the rule for each match, win = 3 points, draw = 1 point, lost = 0 point. how many points FC Barcelona had for season 2008/2009
+6. How many teams participated in the 2008/2009 season?
+7. Which countries are the leagues located in?
+8. What is the name of the football league in Spanish?
+9. Which teams are participating in the Spain LIGA BBVA League in the 2008/2009 season?
+10. Which top 10 match scored the most goals in the 2008/2009 season, by which team?
 
 ### Enter a search query...
 
