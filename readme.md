@@ -1,3 +1,8 @@
+### Update on 2023-12-09
+- update LLM as text-bison@002
+- Fine tuned in order to improve the inference performance and overall latency
+- demo url: https://talk2bq-alexgcp-002-fine-tuned-4f4pypn2ka-uc.a.run.app/
+
 ### Update on 2023-09-14
 - add the chart plot feature
 - Run 2nd sample input 'In the 2008/2009 season, who are the top 10 teams in terms of goals scored?'
